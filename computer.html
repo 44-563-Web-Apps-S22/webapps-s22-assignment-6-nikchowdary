@@ -1,1 +1,96 @@
-computer.html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Orders a copmuter</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Orders a copmuter</h2>
+
+        <form>
+            <input type="checkbox" id="extraMem" name="extraMemory" value="extra">
+            <label for="extraMemory">Extra memory</label></br>
+    
+            <input type="checkbox" id="mouse" name="Mouse" value="mouse">
+            <label for="Mouse">Mouse</label></br>
+    
+            <input type="checkbox" id="cellServi" name="cellService" value="cell">
+            <label for="cellService">Cell service</label></br>
+    
+            <input type="button" onclick="orderComputer()" value="Order a computer">
+        </form>
+    
+        <form>
+            <br>
+            <input type="text" id="propertyName" name="propertyName" value="engraved">
+            <label for="propertyName">Enter a property name</label></br>
+            
+    
+            <input type="text" id="propertValue" name="propertyValue">
+            <label for="propyertValue">Enter a value</label></br>
+            <br>
+            <input type="button" value="Update the computer" onclick="updateComputer()">
+        </form>
+    
+    
+        <p id="result">This text will be replaced </p>
+    
+        <script>
+            var my_Computer = {}
+            output = document.getElementById("result")
+    
+            function orderComputer() {
+                var my_Computer = {}
+                console.log("Getting form values")
+                extra = document.getElementById("extraMem").checked
+                mouse = document.getElementById("mouse").checked
+                cell = document.getElementById("cellServi").checked
+    
+                
+                if (extra) {
+                    my_Computer.extra = true
+                }else{
+                    my_Computer.extra = false
+                }
+                if (mouse) {
+                    my_Computer.mouse = true
+                }
+                else
+                {
+                    my_Computer.mouse = false
+                }
+                if (cell) {
+                    my_Computer.cell = true
+                }
+                else
+                {
+                    my_Computer.cell=false
+                }
+                document.getElementById("result").innerHTML = "extra: " + my_Computer.extra + " mouse: " + my_Computer.mouse + " cell: " + my_Computer.cell
+            }
+       function updateComputer()
+       {
+           var x= document.getElementById("propertyNam").value
+           var y= document.getElementById("propertyValue").value
+           my_Computer[x]= y
+           output.innerHTML = "my_Computer[]=  " + JSON.stringify(my_Computer);
+           
+       }
+            
+        </script>
+
+</body>
+
+</html>
