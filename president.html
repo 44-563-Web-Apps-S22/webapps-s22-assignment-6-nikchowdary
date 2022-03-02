@@ -41,6 +41,24 @@ function checkGuess(){
         out.innerHTML =wrong
     }
 }
+
+var useImage = 1
+function swapImage(){
+    var image = document.getElementById('swapimages');
+    switch (useImage) {
+        case 1: 
+            image.src = "blackswift.jpg"; useImage = 1;
+            break;
+        case 2:
+            image.src = "Nightingle.jpg"; useImage = 2;
+            break;
+        case 3:
+            image.src = "Turkey.jpg"; useImage = 3;
+            break;
+        default:
+            break;
+    }
+}
 </script>
 
 </body>
