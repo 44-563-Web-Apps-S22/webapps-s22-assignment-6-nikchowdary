@@ -42,23 +42,29 @@ function checkGuess(){
     }
 }
 
-var useImage = 1
-function swapImage(){
-    var image = document.getElementById('swapimages');
-    switch (useImage) {
-        case 1: 
-            image.src = "blackswift.jpg"; useImage = 1;
-            break;
-        case 2:
-            image.src = "Nightingle.jpg"; useImage = 2;
-            break;
-        case 3:
-            image.src = "Turkey.jpg"; useImage = 3;
-            break;
-        default:
-            break;
-    }
-}
+<div>
+    <img src="Turkey.jpg" id="im" width="100" height="100" onclick="swapImage()">
+    <script>
+        var useImage=1;
+        function swapImage(){
+            switch(useImage){
+                case 1:
+                document.getElementById('im').src="Nightingle".jpg";
+                useImage=2;
+                break;
+                case 2:
+                document.getElementById('im').src="Turkey.jpg";
+                useImage=3;
+                break;
+                case 3:
+                document.getElementById('im').src="blackswift.jpg";
+                useImage=1;
+                break;
+
+
+            }
+        }
+
 </script>
 
 </body>
