@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Collecting tips
+    </title>
+</head>
+
+<body>
+
+    <h2>Computes tips</h2>
+
+    <form>
+        <label for="chk_amt1">Enter a check amount</label>
+        <input type="number" id="chk_amt1" name="chk_amt1" min=10 max=50 step=2 value=20> <br>
+
+        <label for="tip_inc1">Enter tip increase </label>
+        <input type="number" id="tip_inc1" name="tip_inc1" autofocus value=0.05> <br>
+
+        <input type="button" onclick="tips()" value="Find Tips">
+    </form>
+
+
+    <p id="result">Replaced texts are avaliable here </p>
+
+
+    <form margin-left: 10px;>
+        <input type="radio" id="times" name="arthematic" value="times" onclick="chooseOp()">
+        <label for="times">*</label></br>
+
+        <input type="radio" id="divide" name="arthematic" onclick="chooseOp()" value="divide">
+        <label for="divide">/</label></br>
+
+        <input type="radio" id="exponent" name="arthematic" onclick="chooseOp()" value="exponent">
+        <label for="exponent">**</label></br>
+    </form>
+
+    <p id="result1">Select any operation</p>
+
+
+    <script>
+        function chooseOp() {
+            var chkamount = (Number)(document.getElementById("chk_amt1").value);
+            var incrtip = (Number)(document.getElementById("tip_inc1").value);
+
+            exponent = document.getElementById("exponent").checked
+
+            times = document.getElementById("times").checked
+
+            divide = document.getElementById("divide").checked
+
+            if (exponent) {
+                document.getElementById('result1').innerHTML = "Exponential Value of Amount and Tip is: " + chkamount1 ** incrtip1
+            }
+            else if (times) {
+                document.getElementById('result1').innerHTML = "Multiplication Value of Amount and Tip is: " + chkamount1 * incrtip1
+            }
+            else if (divide) {
+                document.getElementById('result1').innerHTML = "Division value of Amount and Tip is: " + chkamount1 / incrtip1
+            }
+        }
+    </script>
+
+    <script>
+
+        function tips() {
+            chkamount1 = (Number)(document.getElementById("chk_amt1").value)
+            incrtip1 = (Number)(document.getElementById("tip_inc1").value)
+            result = "Tip amounts by increase of " + incrtip + " are:"
+
+
+            var sum = chkamount * 0.1;
+            result += sum + 0.0;
+
+            for (let i = 0; i < 9; i++) {
+                var y = sum + (chkamount1 * incrtip1);
+                result += "  " + Math.round(y * 10) / 10;
+                sum = Math.round(y * 10) / 10;
+            }
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+
+</body>
+
+</html
