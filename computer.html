@@ -31,28 +31,29 @@
     
             <input type="button" onclick="orderComputer()" value="Order a computer">
         </form>
-    
+        <p id="result">This text will be replaced </p>
+
         <form>
             <br>
             <input type="text" id="propertyName" name="propertyName" value="engraved">
             <label for="propertyName">Enter a property name</label></br>
             
     
-            <input type="text" id="propertValue" name="propertyValue">
+            <input type="text" id="propertyValue" name="propertyValue">
             <label for="propyertValue">Enter a value</label></br>
             <br>
             <input type="button" value="Update the computer" onclick="updateComputer()">
         </form>
     
     
-        <p id="result">This text will be replaced </p>
+        <p id="result1">This text will be replaced </p>
     
         <script>
             var my_Computer = {}
-            output = document.getElementById("result")
+            output1 = document.getElementById("result1")
     
             function orderComputer() {
-                var my_Computer = {}
+                my_Computer = {}
                 console.log("Getting form values")
                 extra = document.getElementById("extraMem").checked
                 mouse = document.getElementById("mouse").checked
@@ -82,10 +83,10 @@
             }
        function updateComputer()
        {
-           var x= document.getElementById("propertyNam").value
-           var y= document.getElementById("propertyValue").value
+           x= document.getElementById("propertyName").value
+           y= document.getElementById("propertyValue").value
            my_Computer[x]= y
-           output.innerHTML = "my_Computer[]=  " + JSON.stringify(my_Computer);
+           output1.innerHTML = "my_Computer[]=  " + JSON.stringify(my_Computer);
            
        }
             
