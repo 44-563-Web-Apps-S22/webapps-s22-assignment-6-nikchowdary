@@ -92,9 +92,8 @@
            x= document.getElementById("propertyName").value
            y= document.getElementById("propertyValue").value
            my_Computer[x]= y
-           output1.innerHTML = "my_Computer[]=  " + JSON.stringify(my_Computer);
-           output2.innerHTML="my_computer[]= " + JSON.stringify(my_computer) +"<b>Successfully updated Order details</b>";
-           
+           output1=document.getElementById("result2")
+           output1.innerHTML = "my_Computer[]=  " + JSON.stringify(my_Computer);           
        }
             
         </script>
